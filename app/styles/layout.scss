@@ -1,0 +1,47 @@
+
+// BOOTSTRAP OVERRIDES - START
+.navbar.center {
+  .navbar-collapse {
+    text-align: center;
+    .nav {
+      display: inline-block;
+      float: none;
+    }
+  }
+}
+// BOOTSTRAP OVERRIDES - END
+
+.header {
+  $xs-height: 20rem;
+  $sm-height: 40rem;
+  $md-height: 60rem;
+  $lg-height: 60rem;
+
+  .navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+
+    .navbar-brand, li > a {
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .header-img {
+    background-attachment: scroll;
+    background-image: url('img/header-img.jpg');
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: 50%;
+
+    min-height: $xs-height; height: $xs-height;
+    @media(min-width: $screen-sm-min) { min-height: $sm-height; height: $sm-height; }
+    @media(min-width: $screen-md-min) { min-height: $md-height; height: $md-height; }
+    @media(min-width: $screen-lg-min) { min-height: $lg-height; height: $lg-height; }
+  }
+}
+
+.section {
+  padding: 30px;
+}
