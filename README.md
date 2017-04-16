@@ -1,2 +1,2 @@
-# store-client
-a storefront (for alex's jewelry)
+# torero-band
+A new website for the band
