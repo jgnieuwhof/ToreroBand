@@ -2,12 +2,20 @@
 import React from 'react'
 import { Row, Nav, Navbar, NavItem } from 'react-bootstrap'
 
+const goToId = id => { document.getElementById(id).scrollIntoView() }
+const links = [
+  `Shows`, `Videos`, `Music`, `Shop`, `Photos`, `Contact`,
+].map(x => ({
+  name: x,
+  onClick: () => { goToId(x.toLowerCase()) },
+}))
+
 export default () => {
   return (
     <div className='header'>
       <Row className='header-img' />
       <Row>
-        <Navbar inverse collapseOnSelect className='center'>
+        <Navbar inverse collapseOnSelect className='center' fluid>
           <Navbar.Header>
             <Navbar.Brand>
               <span>Torero</span>
@@ -16,12 +24,9 @@ export default () => {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem eventKey={1} href="#">Shows</NavItem>
-              <NavItem eventKey={2} href="#">Videos</NavItem>
-              <NavItem eventKey={3} href="#">Music</NavItem>
-              <NavItem eventKey={4} href="#">Shop</NavItem>
-              <NavItem eventKey={5} href="#">Photos</NavItem>
-              <NavItem eventKey={6} href="#">Contact</NavItem>
+              { links.map((x, i) => (
+                <NavItem key={x.name} eventKey={i} onClick={x.onClick}>{x.name}</NavItem>
+              ))}
             </Nav>
           </Navbar.Collapse>
         </Navbar>

@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react'
-import { Col, Row } from 'react-bootstrap'
 
 import Section from './Section'
 import { artistEvents } from '../helpers/bandsInTown'
@@ -19,7 +18,7 @@ const ShowContent = ({ shows }) => {
           <thead>
             <tr>
               <th>Date</th>
-              <th>Venue</th>
+              <th className='hidden-xs'>Venue</th>
               <th>Location</th>
               <th>Tickets</th>
             </tr>
@@ -28,7 +27,7 @@ const ShowContent = ({ shows }) => {
             { shows.map(x => (
               <tr key={x.id}>
                 <td>{x.date.format(`MMM D`)}</td>
-                <td>{x.venue}</td>
+                <td className='hidden-xs'>{x.venue}</td>
                 <td className='location'>{x.city}, {x.country}</td>
                 <td><a href={x.url}>RSVP</a></td>
               </tr>
@@ -53,12 +52,8 @@ class Shows extends Component {
   render = () => {
     let { shows } = this.state
     return (
-      <Section className='shows'>
-        <Row>
-          <Col sm={8} smOffset={2}>
-            <ShowContent shows={shows} />
-          </Col>
-        </Row>
+      <Section id='shows'>
+        <ShowContent shows={shows} />
       </Section>
     )
   }

@@ -1,11 +1,15 @@
 
 import React from 'react'
-import { Row, Grid } from 'react-bootstrap'
+import { Col, Row, Grid } from 'react-bootstrap'
 
-export default ({ children, className }) => (
-  <Row className={`${className} section`}>
+export default ({ children, id }) => (
+  <Row id={id} className={`${id} section`}>
     <Grid>
-      { children }
+      <Row>
+        <Col sm={8} smOffset={2}>
+          { children }
+        </Col>
+      </Row>
     </Grid>
   </Row>
 )
