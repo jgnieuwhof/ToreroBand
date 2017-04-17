@@ -1,0 +1,25 @@
+
+.photos {
+  background-color: $gray-darker;
+  .photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      padding: 0;
+    }
+    .dummy {
+      margin-top: 100%;
+    }
+    .in {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-attachment: scroll;
+      background-position-x: 50%;
+      background-position-y: 50%;
+      background-size: cover;
+    }
+  }
+}
