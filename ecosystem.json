@@ -1,14 +1,14 @@
 {
   "apps" : [{
-    "name"        : "store-client",
+    "name"        : "toreroband-client",
     "script"      : "server.prod.js",
     "args"        : [],
     "watch"       : true,
     "node_args"   : "",
-    "cwd"         : "/home/store/store-client/",
+    "cwd"         : "/home/toreroband/toreroband/",
     "env_production" : {
        "NODE_ENV": "production",
-       "PORT": 3001
+       "PORT": 3002
     }
   }]
 }
