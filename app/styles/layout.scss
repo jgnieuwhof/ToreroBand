@@ -4,10 +4,12 @@
   .navbar-collapse {
     text-align: center;
     .nav {
-      position: relative;
-      left: -40px;
       display: inline-block;
       float: none;
+      @media(min-width: $screen-sm-min) {
+        position: relative;
+        left: -40px;
+      }
     }
   }
 }
